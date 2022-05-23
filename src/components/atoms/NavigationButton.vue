@@ -1,5 +1,7 @@
 <template>
   <v-btn
+    text
+    v-bind="{ ...$attrs }"
     @click="onClick"
   >
     <v-icon>

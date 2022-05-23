@@ -1,6 +1,9 @@
 <style lang="less" scoped>
-  .quill-editor-template {
+  .quill-editor-template::v-deep {
     padding: 16px;
+    .ql-editor {
+      min-height: 200px;
+    }
   }
 </style>
 
@@ -8,7 +11,8 @@
   <div class="quill-editor-template">
     <h1 class="title mb-2">Quill Editor</h1>
     <no-ssr>
-      <molecule-quill-editor
+      <organism-extend-quill-editor
+        class="editor"
         :value="value"
         @input="onInput"
       />

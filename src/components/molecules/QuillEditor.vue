@@ -1,12 +1,13 @@
 <template>
   <quill-editor
+    v-bind="{ ...$attrs }"
     :value="value"
     @input="onInput"
   />
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, PropType } from '@nuxtjs/composition-api';
+import { defineComponent, PropType } from '@nuxtjs/composition-api';
 
 export default defineComponent({
   props: {
@@ -20,9 +21,6 @@ export default defineComponent({
     const onInput = (value: string) => {
       emit('input', value);
     };
-    onMounted(() => {
-      // initialize();
-    });
     return {
       onInput,
     };
