@@ -13,9 +13,15 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["./*"],
-      "@/*": ["./*"]
+      "@/*": ["./src/*"]
     },
-    "types": ["@nuxt/types", "@nuxtjs/axios", "@types/node"]
+    "types": [
+      "@nuxt/types",
+      "@nuxtjs/axios",
+      "@types/node",
+      "vuetify",
+      "@/types/*.d.ts"
+    ]
   },
   "exclude": ["node_modules", ".nuxt", "dist"]
 }
