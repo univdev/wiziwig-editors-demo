@@ -11,6 +11,7 @@ export const useNavigation = defineStore('navigation', () => {
     { name: 'Welcome', link: '/' },
     { name: 'Quill Editor', link: '/quill' },
     { name: 'Toast Editor', link: '/toast' },
+    { name: 'CodeMirror Editor', link: '/code-mirror' },
   ]);
   const addItem = (item: NavigationItem) => {
     items.push(item);

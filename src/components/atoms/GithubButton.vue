@@ -1,5 +1,6 @@
 <template>
   <v-btn
+    v-bind="{ ...$attrs }"
     fab
     @click="onClick"
   >

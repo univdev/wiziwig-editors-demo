@@ -59,6 +59,7 @@ export default {
     GITHUB_REPOSITORY_URI: 'https://github.com/univdev/wiziwig-editors-demo',
     QUILL_REPOSITORY_URI: 'https://github.com/surmon-china/vue-quill-editor',
     TOAST_REPOSITORY_URI: 'https://www.npmjs.com/package/@toast-ui/vue-editor',
+    CODE_MIRROR_REPOSITORY_URI: 'https://github.surmon.me/vue-codemirror',
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
