@@ -15,6 +15,7 @@
     <no-ssr>
       <organism-extend-code-mirror
         :value="value"
+        @input="onInput"
       />
     </no-ssr>
     <atom-github-button
@@ -35,12 +36,17 @@ export default defineComponent({
       default: null,
     },
   },
-  setup() {
+  emits: ['input'],
+  setup(_, { emit }) {
     const onClickGithubButton = () => {
       window.open(process.env.CODE_MIRROR_REPOSITORY_URI);
     };
+    const onInput = (value: string) => {
+      emit('input', value);
+    };
     return {
       onClickGithubButton,
+      onInput,
     };
   },
 });

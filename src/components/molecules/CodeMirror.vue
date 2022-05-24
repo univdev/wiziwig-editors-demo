@@ -1,11 +1,14 @@
 <template>
   <code-mirror
+    ref="editor"
+    :value="value"
     :options="option"
+    @input="onUpdate"
   />
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, PropType } from '@nuxtjs/composition-api';
+import { computed, defineComponent, PropType, ref } from '@nuxtjs/composition-api';
 
 export default defineComponent({
   props: {
@@ -27,7 +30,9 @@ export default defineComponent({
       }),
     },
   },
-  setup(props) {
+  emits: ['input'],
+  setup(props, { emit }) {
+    const editor = ref();
     const option = computed(() => {
       const { value, options } = props;
       return {
@@ -35,8 +40,13 @@ export default defineComponent({
         value,
       };
     });
+    const onUpdate = (value: string) => {
+      emit('input', value);
+    };
     return {
+      editor,
       option,
+      onUpdate,
     };
   },
 });

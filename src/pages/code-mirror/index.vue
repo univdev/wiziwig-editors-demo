@@ -1,6 +1,6 @@
 <template>
   <layout-code-mirror-editor
-    :value="payload.html"
+    v-model="payload.html"
   />
 </template>
 

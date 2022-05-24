@@ -1,7 +1,9 @@
 <template>
   <div class="extend-code-mirror">
     <molecule-code-mirror
+      ref="editor"
       :value="value"
+      @input="onInput"
     />
     <div class="d-flex mt-2 justify-end align-center">
       <v-btn
@@ -28,7 +30,9 @@ export default defineComponent({
       default: null,
     },
   },
-  setup() {
+  emits: ['input'],
+  setup(_, { emit }) {
+    const editor = ref();
     const isShowPreviewer = ref(false);
     const onClickGithubButton = () => {
       window.open(process.env.CODE_MIRROR_REPOSITORY_URI);
@@ -36,10 +40,15 @@ export default defineComponent({
     const onClickPreviewButton = () => {
       isShowPreviewer.value = true;
     };
+    const onInput = (value: string) => {
+      emit('input', value);
+    };
     return {
+      editor,
       isShowPreviewer,
       onClickGithubButton,
       onClickPreviewButton,
+      onInput,
     };
   },
 });
