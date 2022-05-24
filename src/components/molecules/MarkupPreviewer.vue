@@ -10,7 +10,8 @@
   <v-dialog
     :value="visible"
     :max-width="500"
-    @close="onClose"
+    @click:outside="onClose"
+    @input="onUpdateVisible"
   >
     <v-card>
       <v-card-title>{{ title }}</v-card-title>
@@ -49,8 +50,12 @@ export default defineComponent({
     const onClose = () => {
       emit('update:visible', false);
     };
+    const onUpdateVisible = (flag: boolean) => {
+      emit('input', flag);
+    };
     return {
       onClose,
+      onUpdateVisible,
     };
   },
 });
