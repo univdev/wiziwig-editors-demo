@@ -28,6 +28,7 @@ export default {
   plugins: [
     { src: '@/plugins/quill-editor', mode: 'client' },
     { src: '@/plugins/toast-ui-editor', mode: 'client' },
+    { src: '@/plugins/vue-code-mirror', mode: 'client' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -53,6 +54,12 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
   ],
+
+  env: {
+    GITHUB_REPOSITORY_URI: 'https://github.com/univdev/wiziwig-editors-demo',
+    QUILL_REPOSITORY_URI: 'https://github.com/surmon-china/vue-quill-editor',
+    TOAST_REPOSITORY_URI: 'https://www.npmjs.com/package/@toast-ui/vue-editor',
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {

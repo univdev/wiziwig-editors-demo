@@ -17,10 +17,10 @@
         :value="value"
         @input="onChangeText"
       />
+      <toast-viewer
+        :initial-value="value"
+      />
     </no-ssr>
-    <toast-viewer
-      :initial-value="value"
-    />
     <atom-github-button
       class="github-button"
       @click="onClickGithubButton"
