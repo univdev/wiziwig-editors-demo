@@ -10,6 +10,7 @@ export const useNavigation = defineStore('navigation', () => {
   const items: NavigationItem[] = reactive([
     { name: 'Welcome', link: '/' },
     { name: 'Quill Editor', link: '/quill' },
+    { name: 'Toast Editor', link: '/toast' },
   ]);
   const addItem = (item: NavigationItem) => {
     items.push(item);

@@ -27,6 +27,7 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '@/plugins/quill-editor', mode: 'client' },
+    { src: '@/plugins/toast-ui-editor', mode: 'client' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
