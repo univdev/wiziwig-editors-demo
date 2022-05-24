@@ -6,10 +6,10 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - wiziwig-editors-demo',
-    title: 'wiziwig-editors-demo',
+    titleTemplate: '%s',
+    title: 'WIZIWIG',
     htmlAttrs: {
-      lang: 'en',
+      lang: 'ko',
     },
     meta: [
       { charset: 'utf-8' },
